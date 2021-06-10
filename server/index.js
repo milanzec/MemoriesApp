@@ -5,13 +5,14 @@ const cors = require('cors');
 
 const app = express();
 
+app.use(cors());
 app.use(express.json({ limit: '30mb', extended: true }));
 app.use(express.urlencoded({ limit: '30mb', extended: true }));
-app.use(cors());
+
 app.use('/posts', postRoutes);
 
 const CONNECTION_URL =
-  'mongodb+srv://appowner1:appowner1123@cluster0.1tpje.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+  'mongodb+srv://milanzec:milanzec123@noviklaster.zdexi.mongodb.net/mongodb?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 mongoose
